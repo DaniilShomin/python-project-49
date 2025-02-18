@@ -1,11 +1,13 @@
-import prompt
 from random import randint
+
+import prompt
 
 
 def welcome_user():
     name = prompt.string("May I have your name? ")
     print(f"Hello, {name}")
     return name
+
 
 def parity_check(name):
     print('Answer "yes" if the number is even, otherwise answer "no".')
@@ -15,7 +17,10 @@ def parity_check(name):
         print(f"Question: {number}")
         parity = number % 2
         answer = input("Your answer: ")
-        if (parity == 0 and answer == 'yes') or (parity != 0 and answer == 'no'):
+        if (parity == 0 and answer == 'yes'):
+            print('Correct!')
+            question_num += 1
+        elif (parity != 0 and answer == 'no'):
             print('Correct!')
             question_num += 1
         elif parity == 0 and answer != 'yes':
