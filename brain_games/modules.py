@@ -1,12 +1,21 @@
-from random import randint
+from random import choice, randint
 
 import prompt
 
 
 def welcome_user():
+    print("Welcome to the Brain Games!")
     name = prompt.string("May I have your name? ")
     print(f"Hello, {name}")
     return name
+
+
+def was_correct_answer(correct: bool, name: str, answer='', result=''):
+    if correct:
+        print(f"Congratulations, {name}!")
+    elif not correct:
+        print(f"'{answer}' is wrong answer ;(. Correct answer was '{result}'.")
+        print(f"Let's try again, {name}!")
 
 
 def parity_check(name):
@@ -24,12 +33,37 @@ def parity_check(name):
             print('Correct!')
             question_num += 1
         elif parity == 0 and answer != 'yes':
-            print(f"'{answer}' is wrong answer ;(. Correct answer was 'yes'.")
-            print(f"Let's try again, {name}!")
+            was_correct_answer(False, name, answer, 'yes')
             break
         elif parity != 0 and answer != 'no':
-            print(f"'{answer}' is wrong answer ;(. Correct answer was 'no'.")
-            print(f"Let's try again, {name}!")
+            was_correct_answer(False, name, answer, 'no')
             break
         if question_num == 3:
-            print(f"Congratulations, {name}!")
+            was_correct_answer(True, name)
+
+
+def calc(name):
+    print('What is the result of the expression?')
+    operations = ['+', '-', '*']
+    question_num = 0
+    while question_num < 3:
+        number_one = randint(1, 99)
+        number_two = randint(1, 99)
+        operation = choice(operations)
+        print(f"Question: {number_one} {operation} {number_two}")
+        answer = input("Your answer: ")
+        match operation:
+            case '+':
+                result = number_one + number_two
+            case '-':
+                result = number_one - number_two
+            case '*':
+                result = number_one * number_two
+        if int(answer) == result:
+            print('Correct!')
+            question_num += 1
+        else:
+            was_correct_answer(False, name, answer, str(result))
+            break
+        if question_num == 3:
+            was_correct_answer(True, name)
