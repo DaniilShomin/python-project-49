@@ -8,7 +8,7 @@ This is a set of console mini games:
     brain-prime
 
 Setup:  
-    make build
+    make build  
     make package-install
 
 To start the game, enter its name.  
