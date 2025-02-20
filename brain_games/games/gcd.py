@@ -19,7 +19,7 @@ def gcd(name):
             for result in range(int(number_two / 2), 0, -1):
                 if number_one % result == 0 and number_two % result == 0:
                     break
-            if int(answer) == result:
+            if answer == str(result):
                 print('Correct!')
                 question_num += 1
             else:
