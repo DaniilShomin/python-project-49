@@ -1,4 +1,5 @@
-from brain_games.modules import gcd, welcome_user
+from brain_games.games.gcd import gcd
+from brain_games.modules import welcome_user
 
 
 def main():

@@ -1,4 +1,5 @@
-from brain_games.modules import prime, welcome_user
+from brain_games.games.prime import prime
+from brain_games.modules import welcome_user
 
 
 def main():

@@ -1,4 +1,5 @@
-from brain_games.modules import progression, welcome_user
+from brain_games.games.progression import progression
+from brain_games.modules import welcome_user
 
 
 def main():

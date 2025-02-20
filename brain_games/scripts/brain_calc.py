@@ -1,4 +1,5 @@
-from brain_games.modules import calc, welcome_user
+from brain_games.games.calc import calc
+from brain_games.modules import welcome_user
 
 
 def main():    
