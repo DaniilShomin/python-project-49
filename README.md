@@ -1,3 +1,8 @@
+### Hexlet tests and linter status:
+[![Actions Status](https://github.com/DaniilShomin/python-project-49/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/DaniilShomin/python-project-49/actions)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/9eed823adf6d7fbea7e8/maintainability)](https://codeclimate.com/github/DaniilShomin/python-project-49/maintainability)
+
 The brain games
 
 This is a set of console mini games:  
@@ -13,11 +18,6 @@ Setup:
 
 To start the game, enter its name.  
     for example: brain-even
-
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/DaniilShomin/python-project-49/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/DaniilShomin/python-project-49/actions)
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/9eed823adf6d7fbea7e8/maintainability)](https://codeclimate.com/github/DaniilShomin/python-project-49/maintainability)
 
 [![asciicast](https://asciinema.org/a/efSF8y4UOodEwvJ3vRRLALTTQ.svg)](https://asciinema.org/a/efSF8y4UOodEwvJ3vRRLALTTQ)
 
