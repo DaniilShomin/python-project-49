@@ -1,3 +1,19 @@
+The brain games
+
+This is a set of console mini games: 
+    brain-even
+    brain-cacl
+    brain-gcd
+    brain-progression
+    brain-prime
+
+Setup:
+    make build
+    make package-install
+
+To start the game, enter its name.
+    for example: brain-even
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/DaniilShomin/python-project-49/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/DaniilShomin/python-project-49/actions)
 
