@@ -18,6 +18,16 @@ def was_correct_answer(correct: bool, name: str, answer='', result=''):
         print(f"Let's try again, {name}!")
 
 
+
+def check_number_prime(number):    
+    if number == 1:
+        return 'no'
+    for divider in range(2, number):
+        if number % divider == 0:
+            return 'no'  
+    return 'yes'
+
+
 def parity_check(name):
     print('Answer "yes" if the number is even, otherwise answer "no".')
     question_num = 0
@@ -25,11 +35,11 @@ def parity_check(name):
         number = randint(1, 99)
         print(f"Question: {number}")
         parity = number % 2
-        answer = input("Your answer: ")
-        if (parity == 0 and answer == 'yes'):
+        answer = prompt.string("Your answer: ")
+        if parity == 0 and answer == 'yes':
             print('Correct!')
             question_num += 1
-        elif (parity != 0 and answer == 'no'):
+        elif parity != 0 and answer == 'no':
             print('Correct!')
             question_num += 1
         elif parity == 0 and answer != 'yes':
@@ -51,7 +61,7 @@ def calc(name):
         number_two = randint(1, 99)
         operation = choice(operations)
         print(f"Question: {number_one} {operation} {number_two}")
-        answer = input("Your answer: ")
+        answer = prompt.string("Your answer: ")
         match operation:
             case '+':
                 result = number_one + number_two
@@ -76,7 +86,7 @@ def gcd(name):
         number_one = randint(1, 99)
         number_two = randint(1, 99)
         print(f"Question: {number_one} {number_two}")
-        answer = input("Your answer: ")
+        answer = prompt.string("Your answer: ")
         if number_one < number_two:
             number_one, number_two = number_two, number_one
         if number_one % number_two != 0:
@@ -114,7 +124,7 @@ def progression(name):
         for value in progression:
             print(value, end=' ')
         print()
-        answer = input("Your answer: ")
+        answer = prompt.string("Your answer: ")
         if int(answer) == result:
             print('Correct!')
             question_num += 1
@@ -124,3 +134,24 @@ def progression(name):
     if question_num == 3:
         was_correct_answer(True, name)
         
+
+
+def prime(name):
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
+    question_num = 0
+    while question_num < 3:
+        number = randint(1, 99)
+        print(f"Question: {number}")
+        answer = prompt.string("Your answer: ")
+        result = check_number_prime(number)
+        if number == 1 and answer == 'no':
+            print('Correct!')
+            question_num += 1
+        elif result == answer:
+            print('Correct!')
+            question_num += 1
+        else:
+            was_correct_answer(False, name, answer, result)
+            break
+    if question_num == 3:
+        was_correct_answer(True, name)
