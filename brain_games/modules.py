@@ -18,7 +18,6 @@ def was_correct_answer(correct: bool, name: str, answer='', result=''):
         print(f"Let's try again, {name}!")
 
 
-
 def check_number_prime(number):    
     if number == 1:
         return 'no'
@@ -134,7 +133,6 @@ def progression(name):
     if question_num == 3:
         was_correct_answer(True, name)
         
-
 
 def prime(name):
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
