@@ -1,10 +1,10 @@
-from brain_games.games.even import parity_check
-from brain_games.modules import welcome_user
+from brain_games.modules import starting_game
 
 
 def main():
-    name = welcome_user()  
-    parity_check(name)
+    name_game = 'even'
+    text_game = 'Answer "yes" if the number is even, otherwise answer "no".'    
+    starting_game(name_game, text_game)
 
 
 if __name__ == '__main__':
