@@ -11,6 +11,6 @@ def progression():
         str_num = int(progression[-1]) + step_prog
         progression.append(str(str_num))
     result, progression[heden_num_prog] = progression[heden_num_prog], '..'
-    str_progression = ', '.join(progression)
+    str_progression = ' '.join(progression)
     print(f"Question: {str_progression}")
     return result
