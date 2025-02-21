@@ -23,16 +23,15 @@ def was_correct_answer(correct: bool, name: str, answer='', result=''):
 
 
 def checking_result(name_game, answer, result, name, number):
-    if name_game == 'even':
-        if number == 0 and answer == 'yes':
-            return True
-        elif number != 0 and answer == 'no':
-            return True
+    if name_game == 'even' and number == 0 and answer == 'yes':
+        return True
+    elif name_game == 'even' and number != 0 and answer == 'no':
+        return True
     elif name_game == 'prime' and number == 1 and answer == 'no':
         return True
     elif answer == str(result):
         return True
-    else:
+    else:        
         print(f"'{answer}' is wrong answer ;(. ", end='')
         print(f"Correct answer was '{result}'.")
         print(f"Let's try again, {name}!")
