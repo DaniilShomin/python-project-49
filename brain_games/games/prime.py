@@ -1,7 +1,7 @@
 from random import randint
 
 
-def is_number_prime(number):    
+def is_number_prime(number:int) -> bool:    
     if number == 1:
         return False
     for divider in range(2, number):
@@ -10,7 +10,7 @@ def is_number_prime(number):
     return True
 
 
-def prime():
+def prime() -> str:
     number = randint(1, 99)
     print(f"Question: {number}")
     return 'yes' if is_number_prime(number) else 'no'

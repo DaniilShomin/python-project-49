@@ -1,16 +1,17 @@
 from random import randint
 
 
-def progression_generator(start, step):
+def progression_generator(start:int, step:int) -> list[str]:
+    max_lenght = 10
     progression = []
     progression.append(str(start))
-    while len(progression) < 10:
+    while len(progression) < max_lenght:
         next_number = int(progression[-1]) + step
         progression.append(str(next_number))
     return progression
     
 
-def progression():
+def progression() -> str:
     start_prog = randint(1, 15)
     step_prog = randint(2, 5)
     heden_num_prog = randint(0, 9)
