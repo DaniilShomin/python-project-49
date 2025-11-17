@@ -20,7 +20,7 @@ packages = ["brain_games"]
 
 [dependency-groups]
 dev = [
-    "ruff>=0.9.6",
+    "ruff>=0.14.5",
 ]
 
 [project.scripts]

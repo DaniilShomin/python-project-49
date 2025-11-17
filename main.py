@@ -1,5 +1,5 @@
 def main():
-    print("Hello from python-project-49!")
+    print("Hello from brain-games!")
 
 
 if __name__ == "__main__":

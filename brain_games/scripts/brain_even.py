@@ -1,11 +1,14 @@
-from brain_games.games.even import parity_check
-from brain_games.modules import starting_game
+from ..cli import welcome_user
+from ..core import core
+from ..games.even_game import even_game
+from ..rules import RULES
 
 
 def main():
-    text_game = 'Answer "yes" if the number is even, otherwise answer "no".'    
-    starting_game(text_game, parity_check)
+    name = welcome_user()
+    rules = RULES["even"]
+    core(even_game, rules, name)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
