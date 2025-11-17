@@ -1,6 +1,6 @@
 from random import randint
 from ..core import Response
-import prompt
+import prompt  # type: ignore
 
 
 def even_game() -> Response:

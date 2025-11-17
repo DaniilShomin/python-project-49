@@ -1,4 +1,4 @@
-import prompt
+import prompt  # type: ignore
 
 
 def welcome_user() -> str:
