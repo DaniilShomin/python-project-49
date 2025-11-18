@@ -11,7 +11,13 @@ class Response(NamedTuple):
 
 def core(game: Callable, name_user: str) -> None:
     count_game = 0
-    print(get_rules())
+    try:
+        rule = get_rules()
+    except CantGetRules:
+        print("[error] : Не удалось найти правила игры")
+        exit(1)
+    print(rule)
+
     while count_game < MAX_GAME_COUNT:
         result = game()
         if not is_win(result):
