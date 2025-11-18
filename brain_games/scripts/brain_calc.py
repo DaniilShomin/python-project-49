@@ -1,11 +1,17 @@
-from brain_games.games.calc import calc
-from brain_games.modules import starting_game
+from ..core import core
+from ..exceptions import CantGetRules
+from ..cli import welcome_user
+from ..games.calc_game import calc
 
 
 def main():
-    text_game = 'What is the result of the expression?'    
-    starting_game(text_game, calc)
+    name = welcome_user()
+    try:
+        core(calc, name)
+    except CantGetRules:
+        print("[error] : Не удалось найти правила игры")
+        exit(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

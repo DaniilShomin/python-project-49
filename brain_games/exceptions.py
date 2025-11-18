@@ -1,0 +1,2 @@
+class CantGetRules(Exception):
+    pass
