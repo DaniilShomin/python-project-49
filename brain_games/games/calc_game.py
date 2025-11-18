@@ -11,7 +11,7 @@ calc_sign = {
 }
 
 
-def calc():
+def calc() -> Response:
     number_one = randint(1, 100)
     number_two = randint(1, 100)
     random_calc_sign = choice(list(calc_sign))
