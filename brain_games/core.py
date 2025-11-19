@@ -9,7 +9,7 @@ class Response(NamedTuple):
     user: str
 
 
-def core(game: Callable, name_user: str) -> None:
+def core(game: Callable[[], Response], name_user: str) -> None:
     count_game = 0
     try:
         rule = get_rules()

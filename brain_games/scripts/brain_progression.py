@@ -1,11 +1,12 @@
-from brain_games.games.progression import progression
-from brain_games.modules import starting_game
+from ..core import core
+from ..cli import welcome_user
+from ..games.progression_game import progression
 
 
-def main():
-    text_game = 'What number is missing in the progression?'    
-    starting_game(text_game, progression)
+def main() -> None:
+    name = welcome_user()
+    core(progression, name)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
