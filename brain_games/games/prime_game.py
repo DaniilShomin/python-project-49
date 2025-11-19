@@ -1,14 +1,12 @@
-from ..core import Response
 from random import randint
-import prompt  # type: ignore
+from ..core import Response
 
 
 def prime() -> Response:
     number = randint(1, 100)
     correct_answer = "yes" if is_prime(number) else "no"
-    print(f"Question: {number}")
-    answer = prompt.string("Your answer: ")
-    return Response(correct_answer, answer)
+    question = f"Question: {number}"
+    return Response(question, correct_answer)
 
 
 def is_prime(number: int) -> bool:

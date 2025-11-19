@@ -2,15 +2,16 @@ from typing import Callable, NamedTuple
 from .configs import MAX_GAME_COUNT, RULES
 import __main__
 from .exceptions import CantGetRules
+import prompt  # type: ignore
 
 
 class Response(NamedTuple):
-    correct: str
-    user: str
+    question: str
+    correct_answer: str
 
 
-def core(game: Callable[[], Response], name_user: str) -> None:
-    count_game = 0
+def core(game: Callable[[], Response]) -> None:
+    name_user = welcome_user()
     try:
         rule = get_rules()
     except CantGetRules:
@@ -18,23 +19,25 @@ def core(game: Callable[[], Response], name_user: str) -> None:
         exit(1)
     print(rule)
 
+    count_game = 0
     while count_game < MAX_GAME_COUNT:
-        result = game()
-        if not is_win(result):
+        round = game()
+        print(round.question)
+        answer = prompt.string("Your answer: ")
+        if not is_win(round.correct_answer, answer):
             print(
-                f"'{result.user}' is wrong answer ;(. Correct answer was '{result.correct}'."
+                f"'{answer}' is wrong answer ;(. Correct answer was '{round.correct_answer}'."
             )
+            print(f"Let's try again, {name_user}!")
             break
         print("Correct")
         count_game += 1
-    if count_game != MAX_GAME_COUNT:
-        print(f"Let's try again, {name_user}!")
     else:
         print(f"Congratulations, {name_user}!")
 
 
-def is_win(response: Response) -> bool:
-    if response.correct == response.user:
+def is_win(result_game: str, user_answer: str) -> bool:
+    if result_game == user_answer:
         return True
     return False
 
@@ -46,3 +49,10 @@ def get_rules() -> str:
         return rules
     except KeyError:
         raise CantGetRules
+
+
+def welcome_user() -> str:
+    print("Welcome to the Brain Game!")
+    name = prompt.string("May I have your name? ")
+    print(f"Hello, {name}")
+    return name

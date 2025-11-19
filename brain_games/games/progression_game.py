@@ -1,6 +1,5 @@
-from ..core import Response
 from random import randint
-import prompt  # type: ignore
+from ..core import Response
 
 
 def progression() -> Response:
@@ -11,9 +10,8 @@ def progression() -> Response:
     hidden_position = randint(0, lenght - 1)
     correct_answer = progression[hidden_position]
     progression[hidden_position] = ".."
-    print(f"Question: {' '.join(progression)}")
-    answer = prompt.string("Your aswer: ")
-    return Response(correct_answer, answer)
+    question = f"Question: {' '.join(progression)}"
+    return Response(question, correct_answer)
 
 
 def get_progression(start: int, step: int, lenght: int) -> list[str]:

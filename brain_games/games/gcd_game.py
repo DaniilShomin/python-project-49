@@ -1,15 +1,13 @@
 from ..core import Response
 from random import randint
-import prompt  # type: ignore
 
 
 def gcd() -> Response:
     number_one = randint(1, 100)
     number_two = randint(1, 100)
-    corrent_answer = str(get_gcd(number_one, number_two))
-    print(f"Question: {number_one} {number_two}")
-    answer = prompt.string("Your answer: ")
-    return Response(corrent_answer, answer)
+    correct_answer = str(get_gcd(number_one, number_two))
+    question = f"Question: {number_one} {number_two}"
+    return Response(question, correct_answer)
 
 
 def get_gcd(first: int, second: int) -> int:
