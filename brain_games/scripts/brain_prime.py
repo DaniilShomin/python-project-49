@@ -1,12 +1,12 @@
-from brain_games.games.prime import prime
-from brain_games.modules import starting_game
+from ..core import core
+from ..cli import welcome_user
+from ..games.prime_game import prime
 
 
-def main():
-    text_game = ('Answer "yes" if given number is prime. '
-                'Otherwise answer "no".')   
-    starting_game(text_game, prime)
+def main() -> None:
+    name = welcome_user()
+    core(prime, name)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
