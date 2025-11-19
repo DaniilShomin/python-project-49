@@ -2,28 +2,84 @@
 [![Actions Status](https://github.com/DaniilShomin/python-project-49/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/DaniilShomin/python-project-49/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/9eed823adf6d7fbea7e8/maintainability)](https://codeclimate.com/github/DaniilShomin/python-project-49/maintainability)
 
-The brain games
+# Brain Games
 
-This is a set of console mini games:  
-    brain-even
-    brain-cacl
-    brain-gcd
-    brain-progression
-    brain-prime
+Набор из пяти консольных мини-игр для тренировки мозга и математических способностей.
 
-Setup:  
-    make build  
-    make package-install
+## 🎮 Список игр
 
-To start the game, enter its name.  
-    for example: brain-even
+- **brain-calc** - Арифметические вычисления
+- **brain-progression** - Поиск пропущенного числа в прогрессии
+- **brain-prime** - Определение простого числа
+- **brain-even** - Проверка на чётность
+- **brain-gcd** - Нахождение наибольшего общего делителя
 
-[![asciicast](https://asciinema.org/a/5uEcSINcq3xPKHies1Ap1mOB5.svg)](https://asciinema.org/a/5uEcSINcq3xPKHies1Ap1mOB5)
+## 📦 Установка
 
-[![asciicast](https://asciinema.org/a/kii0MRE36g88RQShWBIaR0rW5.svg)](https://asciinema.org/a/kii0MRE36g88RQShWBIaR0rW5)
+### Сборка проекта
+```bash
+make build
+```
 
-[![asciicast](https://asciinema.org/a/gHPAgBNCAbr763ooLFZMBz64C.svg)](https://asciinema.org/a/gHPAgBNCAbr763ooLFZMBz64C)
+### Установка пакета
+```bash
+make package-install
+```
 
-[![asciicast](https://asciinema.org/a/gM5Sy8PT4t9f5W8AwDVvOHzRr.svg)](https://asciinema.org/a/gM5Sy8PT4t9f5W8AwDVvOHzRr)
+## 🚀 Запуск игр
 
-[![asciicast](https://asciinema.org/a/Cz9qVF0IAyvY3MdA2FjV5sP5o.svg)](https://asciinema.org/a/Cz9qVF0IAyvY3MdA2FjV5sP5o)
+Каждая игра запускается отдельной командой:
+
+```bash
+brain-calc
+```
+
+```bash
+brain-progression
+```
+
+```bash
+brain-prime
+```
+
+```bash
+brain-even
+```
+
+```bash
+brain-gcd
+```
+
+## 🎯 Описание игр
+
+### Brain Calc
+Решите арифметическое выражение. Игра предлагает различные математические операции для решения.
+
+### Brain Progression
+Найдите пропущенное число в арифметической прогрессии. Определите закономерность и заполните пробел.
+
+### Brain Prime
+Определите, является ли предложенное число простым. Отвечайте "yes" или "no".
+
+### Brain Even
+Определите, является ли число чётным. Простая, но полезная тренировка для ума.
+
+### Brain GCD
+Найдите наибольший общий делитель (НОД) двух чисел. Отличное упражнение для математического мышления.
+
+## 📝 Правила
+
+- В каждой игре 3 раунда
+- Для победы нужно правильно ответить на все вопросы
+- Неправильный ответ завершает игру
+
+## 🛠️ Разработка
+
+Проект собирается с помощью системы сборки Make. Основные команды:
+
+- `make build` - сборка проекта
+- `make package-install` - установка пакета
+
+---
+
+**Развивайте свои математические способности и логическое мышление с Brain Games!**
