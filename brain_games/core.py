@@ -1,8 +1,11 @@
 from typing import Callable, NamedTuple
-from .configs import MAX_GAME_COUNT, RULES
-import __main__
-from .exceptions import CantGetRules
+
 import prompt  # type: ignore
+
+import __main__
+
+from .configs import MAX_GAME_COUNT, RULES
+from .exceptions import CantGetRules
 
 
 class Response(NamedTuple):
@@ -26,7 +29,8 @@ def core(game: Callable[[], Response]) -> None:
         answer = prompt.string("Your answer: ")
         if not is_win(round.correct_answer, answer):
             print(
-                f"'{answer}' is wrong answer ;(. Correct answer was '{round.correct_answer}'."
+                f"'{answer}' is wrong answer ;(."
+                f" Correct answer was '{round.correct_answer}'."
             )
             print(f"Let's try again, {name_user}!")
             break

@@ -1,6 +1,6 @@
+from ..configs import MIN_MAX_PRIME
 from ..core import Response
 from ..utils import get_random_number
-from ..configs import MIN_MAX_PRIME
 
 
 def prime() -> Response:

@@ -1,6 +1,6 @@
+from ..configs import MIN_MAX_EVEN
 from ..core import Response
 from ..utils import get_random_number
-from ..configs import MIN_MAX_EVEN
 
 
 def even_game() -> Response:

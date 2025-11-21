@@ -1,10 +1,10 @@
-from ..core import Response
-from ..utils import get_random_number
 from ..configs import (
     MIN_MAX_PROGRESSION_LENGTH,
     MIN_MAX_PROGRESSION_START,
     MIN_MAX_PROGRESSION_STEP,
 )
+from ..core import Response
+from ..utils import get_random_number
 
 
 def progression() -> Response:
