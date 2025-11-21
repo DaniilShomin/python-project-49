@@ -1,13 +1,18 @@
-from random import randint
 from ..core import Response
+from ..utils import get_random_number
+from ..configs import (
+    MIN_MAX_PROGRESSION_LENGTH,
+    MIN_MAX_PROGRESSION_START,
+    MIN_MAX_PROGRESSION_STEP,
+)
 
 
 def progression() -> Response:
-    start = randint(1, 10)
-    step = randint(1, 9)
-    lenght = randint(5, 10)
+    start = get_random_number(*MIN_MAX_PROGRESSION_START)
+    step = get_random_number(*MIN_MAX_PROGRESSION_STEP)
+    lenght = get_random_number(*MIN_MAX_PROGRESSION_LENGTH)
     progression = get_progression(start, step, lenght)
-    hidden_position = randint(0, lenght - 1)
+    hidden_position = get_random_number(0, lenght - 1)
     correct_answer = progression[hidden_position]
     progression[hidden_position] = ".."
     question = f"Question: {' '.join(progression)}"

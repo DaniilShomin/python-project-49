@@ -1,10 +1,11 @@
 from ..core import Response
-from random import randint
+from ..utils import get_random_number
+from ..configs import MIN_MAX_GCD
 
 
 def gcd() -> Response:
-    number_one = randint(1, 100)
-    number_two = randint(1, 100)
+    number_one = get_random_number(*MIN_MAX_GCD)
+    number_two = get_random_number(*MIN_MAX_GCD)
     correct_answer = str(get_gcd(number_one, number_two))
     question = f"Question: {number_one} {number_two}"
     return Response(question, correct_answer)

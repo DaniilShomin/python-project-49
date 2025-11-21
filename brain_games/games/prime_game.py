@@ -1,9 +1,10 @@
-from random import randint
 from ..core import Response
+from ..utils import get_random_number
+from ..configs import MIN_MAX_PRIME
 
 
 def prime() -> Response:
-    number = randint(1, 100)
+    number = get_random_number(*MIN_MAX_PRIME)
     correct_answer = "yes" if is_prime(number) else "no"
     question = f"Question: {number}"
     return Response(question, correct_answer)
